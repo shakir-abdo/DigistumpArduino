@@ -1,4 +1,5 @@
-# Deprecated and now (2023) unsupported!<br/>Please use [ATTinyCore](https://github.com/SpenceKonde/ATTinyCore) instead!<br/>&nbsp;
+# The core is deprecated and now (2023) unsupported!<br/>Please use [ATTinyCore](https://github.com/SpenceKonde/ATTinyCore) instead!
+For up to date [micronucleus bootloaders](https://github.com/ArminJo/micronucleus-firmware/tree/master/firmware/releases) see [here](https://github.com/ArminJo/micronucleus-firmware).
 
 ## Improved version of Digistump avr core for Arduino
 Available as Arduino Board Manager entry "Digistump AVR Boards" using the Board Manager URL: https://raw.githubusercontent.com/ArminJo/DigistumpArduino/master/package_digistump_index.json
@@ -62,7 +63,7 @@ You may also test the t85_agressive bootloader, [a configuration overwiew is ava
 It works for my boards but the USB timing is not guaranteed as stable as in the other configurations.
 
 ## Fuse setting
-The meaning of fuses can be seen with the [Engbedded Atmel AVR® Fuse Calculator](https://www.engbedded.com/fusecalc/).
+The meaning of fuses can be seen with the [Engbedded Atmel AVRï¿½ Fuse Calculator](https://www.engbedded.com/fusecalc/).
 Windows helper scripts for setting fuses can be found [here](https://github.com/ArminJo/micronucleus-firmware/tree/master/utils).
 
 The default fuses for a **Digispark** board are:<br/>
@@ -70,7 +71,7 @@ The default fuses for a **Digispark** board are:<br/>
 - ATtiny85 Hfuse: 0xDD - External Reset pin enabled (Pin5 not usable as I/O) + BOD 2.7 V + Enable Serial Program and Data Downloading
 - ATtiny85 Efuse: 0xFE - self programming enabled.
 
-BOD enabled requires additional 20 µA in sleep state and therefore may be not desirable for low power battery applications. To disable BOD, use 0xDF as Hfuse.
+BOD enabled requires additional 20 ï¿½A in sleep state and therefore may be not desirable for low power battery applications. To disable BOD, use 0xDF as Hfuse.
 
 The default fuses for a **Digispark Pro** board are:<br/>
 - ATtiny167 Lfuse: 0xFF - External crystal osc. Frequency 8-16 MHz + Startup 65 ms
@@ -130,24 +131,24 @@ INT1 9 (D3) PA3  4|    |17  PB3 (D11) 4 OC1BV USB-
 Digital Pin numbers in parenthesis are for ATTinyCore library
 
 ```
-                       USB
-                     +-\__/-+
-              PA2  15|      |14  PB7
-              PA3  16|      |13  PB5 SCK
-           17 PA0  A6|      |12  PB4 MISO
-           18 PA1  A7|      |11  PB3 MOSI
-     (D17) 19 PC0  A0|      |10  PB2 OC1B/PWM SS
-     (D18) 20 PC1  A1|      |9   PB1 OC1A/PWM
-     (D19) 21 PC2  A2|      |8   PB0
-     (D20) 22 PC3  A3|      |7   PD7 RX
-SDA  (D21) 23 PC4  A4|      |6   PD6 TX
-SCL  (D22) 24 PC5  A5|      |5   PD5
-     (D23)    PC1  25|      |4   PD4
-RESET         PC6 RST|      |3   PD3 INT1
-LED           PD0   0|      |5V
-USB-          PD1   1|      |GND
-USB+  INT0    PD2   2|      |VIN
-                     +------+
+                        USB
+                      +-\__/-+
+               PA2  15|      |14  PB7
+               PA3  16|      |13  PB5 SCK
+           D17 PA0  A6|      |12  PB4 MISO
+           D18 PA1  A7|      |11  PB3 MOSI
+     (D17) D19 PC0  A0|      |10  PB2 OC1B/PWM SS
+     (D18) D20 PC1  A1|      |9   PB1 OC1A/PWM
+     (D19) D21 PC2  A2|      |8   PB0
+     (D20) D22 PC3  A3|      |7   PD7 RX
+SDA  (D21) D23 PC4  A4|      |6   PD6 TX
+SCL  (D22) D24 PC5  A5|      |5   PD5
+     (D23)     PC7  25|      |4   PD4
+RESET          PC6 RST|      |3   PD3 INT1
+LED            PD0   0|      |5V
+USB-           PD1   1|      |GND
+USB+  INT0     PD2   2|      |VIN
+                      +------+
   USB+ and USB- are each connected to a 3.3 volt Zener to GND and with a 68 ohm series resistor to the ATtiny pin.
   USB- has a 1k0 pullup resistor to indicate a low-speed device.
   USB+ and USB- are each terminated on the host side with 15k to 25k pull-down resistors.
